@@ -70,7 +70,7 @@ class Hrequest {
     );
   }
 
-  request<T>(config: IHrequestConfig): Promise<T> {
+  request<T>(config: IHrequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       if (config.showLoading === false) {
         this.showLoading = config.showLoading;
@@ -97,19 +97,19 @@ class Hrequest {
     });
   }
 
-  get<T>(config: IHrequestConfig): Promise<T> {
+  get<T>(config: IHrequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'GET' });
   }
 
-  post<T>(config: IHrequestConfig): Promise<T> {
+  post<T>(config: IHrequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'POST' });
   }
 
-  delete<T>(config: IHrequestConfig): Promise<T> {
+  delete<T>(config: IHrequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'DELETE' });
   }
 
-  patch<T>(config: IHrequestConfig): Promise<T> {
+  patch<T>(config: IHrequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'PATCH' });
   }
 }
