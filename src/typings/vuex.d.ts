@@ -1,4 +1,4 @@
-import { Store } from '@/store/vuex';
+import { Store } from 'vuex';
 
 declare module '@vue/runtime-core' {
   // 声明自己的 store state
