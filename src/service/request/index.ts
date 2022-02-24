@@ -3,7 +3,7 @@ import { ElLoading } from 'element-plus';
 
 import type { AxiosInstance } from 'axios';
 import type { IHrequestConfig, IRequestInterceptors } from './types';
-import type { LoadingInstance } from 'element-plus/lib/components/loading/src/loading';
+import type { ILoadingInstance } from 'element-plus/lib/components/loading/src/loading.type';
 
 const DEFAULT_LOADING = true;
 
@@ -11,7 +11,7 @@ class Hrequest {
   instance: AxiosInstance;
   interceptors?: IRequestInterceptors;
   showLoading?: boolean;
-  loading?: LoadingInstance;
+  loading?: ILoadingInstance;
 
   constructor(config: IHrequestConfig) {
     this.instance = axios.create(config);
