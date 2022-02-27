@@ -50,13 +50,7 @@ class Hrequest {
       (res) => {
         this.loading?.close();
 
-        const data = res.data;
-
-        if (data.returnCode === -1001) {
-          console.log(404);
-        } else {
-          return data;
-        }
+        return res.data;
       },
       (err) => {
         this.loading?.close();
